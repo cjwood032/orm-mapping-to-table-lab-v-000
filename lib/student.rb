@@ -12,4 +12,8 @@ attr_accessor :name, :grade
     TEXT
     DB[:conn].execute(sql)
   end #end the create table method
+###################################
+  def self.drop_table
+    
+  end #end the drop table
 end
