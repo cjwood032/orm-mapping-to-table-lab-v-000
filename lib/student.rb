@@ -14,6 +14,6 @@ attr_accessor :name, :grade
   end #end the create table method
 ###################################
   def self.drop_table
-    
+    DB[:conn].execute("DROP TABLE IF EXISTS students")
   end #end the drop table
 end
