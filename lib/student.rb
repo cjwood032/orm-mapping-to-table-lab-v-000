@@ -4,5 +4,8 @@ attr_accessor :name, :grade
   #  with DB[:conn]
   def initialize(name, grade, id=nil)
     @id, @name, @grade = id, name, grade
-  end
+  end #def initialize
+###################################
+  def self.create_table
+  end #end the create table method
 end
