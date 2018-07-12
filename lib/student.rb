@@ -8,7 +8,7 @@ attr_accessor :name, :grade
 ###################################
   def self.create_table
     sql= <<-TEXT
-      CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, grade TEXT)
+CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, grade TEXT)
     TEXT
     DB[:conn].execute(sql)
   end #end the create table method
@@ -16,4 +16,8 @@ attr_accessor :name, :grade
   def self.drop_table
     DB[:conn].execute("DROP TABLE IF EXISTS students")
   end #end the drop table
+###################################
+  def save
+    DB[:conn].execute(("INSERT INTO students (name, grade) VALUES (?,?)"), self.name, self.grade)
+  end #end the save method
 end
